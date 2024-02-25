@@ -1,7 +1,0 @@
-
-config gwng
-	list interfaces1 ''
-	option num '1'
-	option username ''
-	option password ''
-
