@@ -9,7 +9,8 @@ if pid and pid ~= "" then
     client_running = true  
 end  
 
-m = Map("gwng_autologin", translate("GWNG Autologin Client"), translate("广外南国路由器自动登录<br>Powered By barryblueice<br>联系方式：1293945058（QQ），13268648195（电话，微信同号）<br>项目地址：<br>https://github.com/barryblueice/GWNG-AutoLogin-Client-For-OpenWrt（国外）<br>https://gitee.com/barryblueice/gwng-auto-login-client-for-open-wrt（国内）"))
+-- m = Map("gwng_autologin", translate("GWNG Autologin Client"), translate("广外南国路由器自动登录<br>Powered By barryblueice<br>联系方式：1293945058（QQ），13268648195（电话，微信同号）<br>项目地址：<br>https://github.com/barryblueice/GWNG-AutoLogin-Client-For-OpenWrt（国外）<br>https://gitee.com/barryblueice/gwng-auto-login-client-for-open-wrt（国内）"))
+m = Map("gwng_autologin", translate("GWNG Autologin Client"), translate("广外南国路由器自动登录，Powered By Barryblueice<br>联系方式：1293945058（QQ），13268648195（电话，微信同号）<br>项目地址：<a href='https://github.com/barryblueice/GWNG-AutoLogin-Client-For-OpenWrt'>GitHub</a>/<a href='https://gitee.com/barryblueice/gwng-auto-login-client-for-open-wrt'>Gitee</a>"))
 
 s = m:section(TypedSection, "gwng", "")
 s.addremove = false
