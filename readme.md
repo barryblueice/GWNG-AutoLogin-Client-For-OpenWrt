@@ -2,25 +2,77 @@
 
 基于Golang+lua实现的 广东外语外贸大学南国商学院 校园网 OpenWrt路由器自动登录插件
 
-<font color="red"><b>该插件由于特殊原因未经过验证，请谨慎使用。</b></font>
+~~**该插件由于特殊原因未经过验证，请谨慎使用。**~~
 
-<font color="red"><b>强烈建议该插件运行在x86-64环境下，其他环境由于设备缺乏暂未验证。</b></font>
+**强烈建议该插件运行在x86-64环境下，其他环境由于设备缺乏暂未验证。**
+
+目前已验证可使用平台有：
+
+1.x86_64（基于iStore OS）
+
+2.mipsle（基于e8820s，mt7621需下专版可执行文件）
 
 ## 目前已实现的功能：
 
-- [ ] 校园网登录
-- [ ] 基于macvlan的单线双拨实现
+- [x] 校园网登录
+- [x] 基于macvlan的单线双拨实现
 
 ## Install / Uninstall：
 
-```bash
-安装：
-chmod +x install.sh
-./install.sh install
-卸载：
-chmod +x install.sh
-./install.sh uninstall
+请自行查看Wiki。
+
+## 以下内容仅供开发者观看：
+
+由于个人水平问题，该项目代码包括但不局限于以下血压高内容：
+
+1. 三角稳定：
+
+```python
+if:
+    if:
+        if:
+            if:
+                if:
+                    if:
+                    else:
+                else:
+            else:
+        else:
+    else:
+else:
 ```
+
+2. 视而不见：
+
+```python
+try:
+except:
+try:
+except:
+try:
+except:
+```
+
+3. 热辣炸串：
+
+```python
+if:
+elif:
+elif:
+elif:
+elif:
+else
+```
+
+4. 真假李逵：
+
+```python
+def mix(a,b):
+    ......
+def mix_reverse(a,b):
+    ......
+```
+
 
 ## 实现原理：
 
