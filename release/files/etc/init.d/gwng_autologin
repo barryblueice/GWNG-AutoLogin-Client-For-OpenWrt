@@ -1,0 +1,50 @@
+#!/bin/sh /etc/rc.common 
+
+START=99
+
+NAME=gwng  
+DAEMON=/usr/sbin/$NAME  
+PIDFILE=/var/run/$NAME.pid
+LOGFILE=/var/log/gwng/script.log  
+PFILE=/var/log/gwng/gwng.log
+  
+start() {
+    if [ -f "$LOGFILE" ]; then  
+        rm "$LOGFILE"  
+    fi  
+    if [ -f "$PFILE" ]; then  
+        rm "$PFILE"  
+    fi  
+    echo "$(date) Starting $NAME..."  >> "$LOGFILE" 2>&1
+    $DAEMON > /dev/null 2>&1 &
+    echo "$(date) $NAME has started."  >> "$LOGFILE" 2>&1
+}  
+  
+stop() {    
+    echo "$(date) Stopping $NAME..."  >> "$LOGFILE" 2>&1
+    PID=$(pgrep "$DAEMON")
+      
+    if [ -z "$PID" ]; then    
+        echo "$(date) PID not found!"  >> "$LOGFILE" 2>&1
+    else    
+        echo "$(date) PID found: $PID"   >> "$LOGFILE" 2>&1
+        kill $PID 2>/dev/null 
+        echo "$(date) $NAME has stopped."  >> "$LOGFILE" 2>&1
+    fi  
+}
+
+restart() {
+    echo "$(date) Stopping $NAME..."  >> "$LOGFILE" 2>&1
+    PID=$(pgrep "$DAEMON")
+      
+    if [ -z "$PID" ]; then    
+        echo "$(date) PID not found!"  >> "$LOGFILE" 2>&1
+    else    
+        echo "$(date) PID found: $PID"   >> "$LOGFILE" 2>&1
+        kill $PID 2>/dev/null 
+        echo "$(date) $NAME has stopped."  >> "$LOGFILE" 2>&1
+    fi  
+    echo "$(date) Starting $NAME..."  >> "$LOGFILE" 2>&1
+    $DAEMON > /dev/null 2>&1 &
+    echo "$(date) $NAME has started."  >> "$LOGFILE" 2>&1
+}
