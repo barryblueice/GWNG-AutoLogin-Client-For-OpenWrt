@@ -347,11 +347,10 @@ func main() {
 	for {
 		for i := 0; i < 10; i++ {
 			Config_Content, Ok := import_config()
-			interfaces1 := Config_Content["interfaces1"]
-			interfaces2 := Config_Content["interfaces2"]
 			num := Config_Content["num"]
 			if Ok {
 				if num == "1" {
+					interfaces1 := Config_Content["interfaces1"]
 					if checkInternetConnection(interfaces1) {
 						fmt.Println(interfaces1 + "联网成功")
 					} else {
@@ -379,6 +378,8 @@ func main() {
 						}
 					}
 				} else {
+					interfaces1 := Config_Content["interfaces1"]
+					interfaces2 := Config_Content["interfaces2"]
 					ping_1 := checkInternetConnection(interfaces1)
 					ping_2 := checkInternetConnection(interfaces2)
 					if ping_1 && ping_2 {
